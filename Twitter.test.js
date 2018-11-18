@@ -41,6 +41,7 @@ describe('Twitter', () => {
   });
 
   it('can change the message', async () => {
+  	//example of a send operation, a transaction object is created (pay gas)
     await twitter.methods.setMessage('bye').send({ from: accounts[0] });
     const message = await twitter.methods.message().call();
     assert.equal(message, 'bye');
